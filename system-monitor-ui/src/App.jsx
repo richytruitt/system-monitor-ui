@@ -8,7 +8,9 @@ function App() {
   const [token, setToken] = useState("");
   const [containers, setContainers] = useState([]);
   const [error, setError] = useState("");
-
+  
+  VITE_API_BASE_URL=http://192.168.1.200:8000
+  
   async function login(event) {
     event.preventDefault();
     setError("");
@@ -17,7 +19,7 @@ function App() {
     formData.append("username", username);
     formData.append("password", password);
 
-    const response = await fetch("http://localhost:8000/login", {
+    const response = await fetch("{VITE_API_BASE_URL}/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -37,7 +39,7 @@ function App() {
   }
 
   async function fetchContainers(authToken) {
-    const response = await fetch("http://localhost:8000/docker/containers", {
+    const response = await fetch("{VITE_API_BASE_URL}/docker/containers", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${authToken}`,
