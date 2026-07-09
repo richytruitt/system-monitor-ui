@@ -1,24 +1,30 @@
 function ContainerCard({ container }) {
   return (
-    <article className="card">
-      <h2>{container.name}</h2>
+    <div className="container-card">
+      <div className="card-header">
+        <h2 className="card-title">{container.name}</h2>
+        <span className={`status ${container.status}`}>
+          {container.status}
+        </span>
+      </div>
 
-      <p>
-        <strong>ID:</strong> {container.id}
-      </p>
+      <div className="card-body">
+        <div className="row">
+          <span className="label">ID</span>
+          <span classname=>{container.id}</span>
+        </div>
 
-      <p>
-        <strong>Image:</strong> {container.image}
-      </p>
+        <div className="row">
+          <span className="label">Image</span>
+          <span>{container.image}</span>
+        </div>
 
-      <p>
-        <strong>Status:</strong> {container.status}
-      </p>
-
-      <p>
-        <strong>Created:</strong> {container.created}
-      </p>
-    </article>
+        <div className="row">
+          <span className="label">Created</span>
+          <span>{container.created}</span>
+        </div>
+      </div>
+    </div>
   );
 }
 

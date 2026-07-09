@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ContainerCard from "./components/ContainerCard";
+import "./App.css";
 
 
 function App() {
@@ -80,18 +81,14 @@ function App() {
 
       {error && <p>{error}</p>}
 
-      {token && (
-        <button onClick={() => fetchContainers(token)}>
-          Refresh
-        </button>
-      )}
-
-      {containers.map((container) => (
+      <div className="cards">
+        {containers.map((container) => (
         <ContainerCard
           key={container.id}
           container={container}
         />
-      ))}
+        ))}
+      </div>
     </>
   );
 }
