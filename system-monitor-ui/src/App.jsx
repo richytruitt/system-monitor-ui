@@ -9,7 +9,7 @@ function App() {
   const [containers, setContainers] = useState([]);
   const [error, setError] = useState("");
   
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   
   async function login(event) {
     event.preventDefault();
