@@ -17,7 +17,7 @@ function App() {
     formData.append("username", username);
     formData.append("password", password);
 
-    const response = await fetch("http://localhost:8000/login", {
+    const response = await fetch("/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -37,7 +37,7 @@ function App() {
   }
 
   async function fetchContainers(authToken) {
-    const response = await fetch("http://localhost:8000/docker/containers", {
+    const response = await fetch("/docker/containers", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${authToken}`,
