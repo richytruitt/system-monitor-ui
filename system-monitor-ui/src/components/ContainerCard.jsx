@@ -11,7 +11,7 @@ function ContainerCard({ container }) {
       <div className="card-body">
         <div className="row">
           <span className="label">ID</span>
-          <span classname=>{container.id}</span>
+          <span>{container.id}</span>
         </div>
 
         <div className="row">
